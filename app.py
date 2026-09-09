@@ -203,26 +203,38 @@ st.markdown("---")
 st.header("📩 Contáctanos o Agenda una Cita")
 st.write("Déjanos tus datos y nos pondremos en contacto contigo lo antes posible para resolver tus dudas.")
 
-with st.form("form_contacto"):
-    col_f1, col_f2 = st.columns(2)
-    with col_f1:
-        nombre = st.text_input("Nombre completo")
-        telefono = st.text_input("Número de teléfono")
-    with col_f2:
-        correo = st.text_input("Correo electrónico")
-        paquete_interes = st.selectbox("Paquete o servicio de interés", [
-            "Paquete 1", "Paquete 2", "Paquete 3", "Paquete 4", 
-            "Servicios Adicionales", "Cotización General"
-        ])
-    
-    dudas = st.text_area("Dudas o comentarios")
-    enviar = st.form_submit_button("Enviar Mensaje")
-    
-    if enviar:
-        if nombre and telefono:
-            st.success(f"¡Gracias {nombre}! Tus datos han sido enviados correctamente. Nos comunicaremos contigo muy pronto.")
-        else:
-            st.error("Por favor, completa al menos tu nombre y número de teléfono.")
+# Reemplaza 'TU_CODIGO_AQUI' con el código que te asignó Formspree (ejemplo: 'f/xbjnwxyz')
+formspree_url = "https://formspree.io/f/https://formspree.io/f/mkjnkprw"
 
-st.markdown("---")
-st.markdown("<p style='text-align: center; color: #64748b;'>© 2026 NETRO DETAIL. Todos los derechos reservados.</p>", unsafe_allow_html=True)
+st.markdown(f"""
+<form action="{formspree_url}" method="POST">
+    <div style="margin-bottom: 15px;">
+        <label style="color: #1e293b; font-weight: bold;">Nombre completo</label><br>
+        <input type="text" name="nombre" required style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #cbd5e1;">
+    </div>
+    <div style="margin-bottom: 15px;">
+        <label style="color: #1e293b; font-weight: bold;">Número de teléfono</label><br>
+        <input type="text" name="telefono" required style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #cbd5e1;">
+    </div>
+    <div style="margin-bottom: 15px;">
+        <label style="color: #1e293b; font-weight: bold;">Correo electrónico</label><br>
+        <input type="email" name="correo" required style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #cbd5e1;">
+    </div>
+    <div style="margin-bottom: 15px;">
+        <label style="color: #1e293b; font-weight: bold;">Paquete o servicio de interés</label><br>
+        <select name="paquete_interes" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #cbd5e1;">
+            <option value="Paquete 1">Paquete 1</option>
+            <option value="Paquete 2">Paquete 2</option>
+            <option value="Paquete 3">Paquete 3</option>
+            <option value="Paquete 4">Paquete 4</option>
+            <option value="Servicios Adicionales">Servicios Adicionales</option>
+            <option value="Cotización General">Cotización General</option>
+        </select>
+    </div>
+    <div style="margin-bottom: 15px;">
+        <label style="color: #1e293b; font-weight: bold;">Dudas o comentarios</label><br>
+        <textarea name="dudas" rows="4" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #cbd5e1;"></textarea>
+    </div>
+    <button type="submit" style="background: linear-gradient(90deg, #ff7e00, #ec4899); color: white; padding: 10px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">Enviar Mensaje</button>
+</form>
+""", unsafe_allow_html=True)
