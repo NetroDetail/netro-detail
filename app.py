@@ -204,7 +204,7 @@ st.header("📩 Contáctanos o Agenda una Cita")
 st.write("Déjanos tus datos y nos pondremos en contacto contigo lo antes posible para resolver tus dudas.")
 
 # Reemplaza 'TU_CODIGO_AQUI' con el código que te asignó Formspree (ejemplo: 'f/xbjnwxyz')
-formspree_url = "https://formspree.io/f/https://formspree.io/f/mkjnkprw"
+formspree_url = "https://formspree.io/f/mkjnkprw"
 
 st.markdown(f"""
 <form action="{formspree_url}" method="POST">
