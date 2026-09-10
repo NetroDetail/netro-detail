@@ -6,24 +6,27 @@ st.set_page_config(
     layout="wide"
 )
 
-# Estilos para convertir la parte superior en un banner horizontal completo
+# Estilos profesionales con el banner horizontal texturizado de lado a lado
 st.markdown("""
     <style>
     .stApp {
         background-color: #f8fafc;
     }
-    /* Banner horizontal de lado a lado con la textura estilo muro/concreto */
-    .banner-horizontal {
-        background-color: #e5e7eb;
-        background-image: radial-gradient(#9ca3af 0.8px, transparent 0.8px), radial-gradient(#9ca3af 0.8px, #e5e7eb 0.8px);
-        background-size: 30px 30px;
-        background-position: 0 0, 15px 15px;
-        padding: 30px 20px;
-        width: 100%;
+    /* Franja banner horizontal de lado a lado con la textura de fondo del logo */
+    .banner-completo {
+        background-color: #e2e8f0;
+        background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px), radial-gradient(#cbd5e1 1.2px, #e2e8f0 1.2px);
+        background-size: 24px 24px;
+        background-position: 0 0, 12px 12px;
+        width: 100vw;
+        position: relative;
+        left: calc(-50vw + 50%);
+        padding: 35px 0;
+        margin-top: -20px;
+        margin-bottom: 30px;
         border-top: 3px solid #cbd5e1;
         border-bottom: 3px solid #cbd5e1;
-        margin-bottom: 30px;
-        box-shadow: inset 0 3px 8px rgba(0,0,0,0.06);
+        box-shadow: inset 0 4px 10px rgba(0,0,0,0.04);
     }
     .subtitulo {
         font-size: 1.3rem;
@@ -82,8 +85,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- BANNER HORIZONTAL SUPERIOR ---
-st.markdown('<div class="banner-horizontal">', unsafe_allow_html=True)
+# --- BANNER HORIZONTAL CONTINUO CON LA TEXTURA DEL LOGO ---
+st.markdown('<div class="banner-completo">', unsafe_allow_html=True)
 
 col_logo1, col_logo2, col_logo3 = st.columns([2, 1, 2])
 with col_logo2:
@@ -123,14 +126,14 @@ st.write("Mira los acabados de alto nivel que logramos en los vehículos de nues
 
 col_v3, col_v4 = st.columns(2)
 with col_v3:
-    st.markdown("### Resultado: Auto Detallado 1")
+    st.markdown("### Resultado: Aplicación de Cerámico")
     try:
         st.video("video3.mp4")
     except:
         st.info("💡 Sube tu video3.mp4 en GitHub para mostrarlo aquí.")
 
 with col_v4:
-    st.markdown("### Resultado: Auto Detallado 2")
+    st.markdown("### Resultado: Pulido y Encerado")
     try:
         st.video("video4.mp4")
     except:
@@ -258,7 +261,7 @@ st.markdown(f"""
     </div>
     <div style="margin-bottom: 15px;">
         <label style="color: #1e293b; font-weight: bold;">Número de teléfono</label><br>
-        <input type="text" name="telefono" required style="width: 100% style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #cbd5e1;">
+        <input type="text" name="telefono" required style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #cbd5e1;">
     </div>
     <div style="margin-bottom: 15px;">
         <label style="color: #1e293b; font-weight: bold;">Correo electrónico</label><br>
