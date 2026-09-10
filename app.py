@@ -78,11 +78,10 @@ with col_logo2:
 
 st.markdown('<p class="subtitulo">⚡ Pasión por la estética y protección máxima para tu vehículo ⚡</p>', unsafe_allow_html=True)
 
-# --- SECCIÓN DE VIDEOS EN CUADRÍCULA (LADO A LADO) ---
-st.header("🎥 Conoce Netro Detail y Resultados")
-st.write("Mira nuestros servicios en acción y los resultados profesionales que logramos:")
+# --- SECCIÓN 1: VIDEOS INFORMATIVOS DE LA MARCA ---
+st.header("🎥 Conoce Netro Detail")
+st.write("Descubre quiénes somos y nuestra línea exclusiva de productos:")
 
-# Fila 1 de videos
 col_v1, col_v2 = st.columns(2)
 with col_v1:
     st.markdown("### Presentación Oficial")
@@ -100,21 +99,24 @@ with col_v2:
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-# Fila 2 de videos (Resultados en autos)
+# --- SECCIÓN 2: VIDEOS DE RESULTADOS PROFESIONALES ---
+st.header("✨ Resultados Profesionales")
+st.write("Mira los acabados de alto nivel que logramos en los vehículos de nuestros clientes:")
+
 col_v3, col_v4 = st.columns(2)
 with col_v3:
     st.markdown("### Resultado: Auto Detallado 1")
     try:
         st.video("video3.mp4")
     except:
-        st.info("💡 Falta el archivo video3.mp4")
+        st.info("💡 Sube tu video3.mp4 en GitHub para mostrarlo aquí.")
 
 with col_v4:
     st.markdown("### Resultado: Auto Detallado 2")
     try:
         st.video("video4.mp4")
     except:
-        st.info("💡 Falta el archivo video4.mp4")
+        st.info("💡 Sube tu video4.mp4 en GitHub para mostrarlo aquí.")
 
 st.markdown("<br>", unsafe_allow_html=True)
 
