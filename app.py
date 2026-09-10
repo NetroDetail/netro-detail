@@ -78,26 +78,47 @@ with col_logo2:
 
 st.markdown('<p class="subtitulo">⚡ Pasión urbana, estética y protección máxima para tu vehículo ⚡</p>', unsafe_allow_html=True)
 
-# --- VIDEOS INSTITUCIONALES Y COMERCIALES ---
-col_v1, col_v2, col_v3 = st.columns([1, 6, 1])
-with col_v2:
-    st.header("🎥 Conoce Netro Detail")
+# --- SECCIÓN DE VIDEOS EN CUADRÍCULA (LADO A LADO) ---
+st.header("🎥 Conoce Netro Detail y Resultados")
+st.write("Mira nuestros servicios en acción y los resultados profesionales que logramos:")
+
+# Fila 1 de videos
+col_v1, col_v2 = st.columns(2)
+with col_v1:
+    st.markdown("### Presentación Oficial")
     try:
         st.video("video.mp4")
     except:
-        st.info("💡 Coloca tu primer video con el nombre 'video.mp4'.")
-    
-    st.markdown("<br>", unsafe_allow_html=True)
-    
-    st.header("🛍️ Próximamente a la Venta: Línea de Productos")
+        st.info("💡 Falta el archivo video.mp4")
+
+with col_v2:
+    st.markdown("### Línea de Productos")
     try:
         st.video("video2.mp4")
     except:
-        st.info("💡 Coloca tu segundo video con el nombre 'video2.mp4'.")
+        st.info("💡 Falta el archivo video2.mp4")
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-# --- NÚMERO DE TELÉFONO DE CONTACTO / WHATSAPP ---
+# Fila 2 de videos (Resultados en autos)
+col_v3, col_v4 = st.columns(2)
+with col_v3:
+    st.markdown("### Resultado: Auto Detallado 1")
+    try:
+        st.video("video3.mp4")
+    except:
+        st.info("💡 Falta el archivo video3.mp4")
+
+with col_v4:
+    st.markdown("### Resultado: Auto Detallado 2")
+    try:
+        st.video("video4.mp4")
+    except:
+        st.info("💡 Falta el archivo video4.mp4")
+
+st.markdown("<br>", unsafe_allow_html=True)
+
+# --- BANNER DE WHATSAPP INTERACTIVO ---
 whatsapp_url = "https://wa.me/524421219758?text=Hola,%20me%20interesa%20cotizar%20un%20servicio%20de%20detallado%20para%20mi%20auto."
 
 st.markdown(f"""
@@ -203,11 +224,10 @@ with col_add3:
 
 st.markdown("---")
 
-# --- APARTADO DE CONTACTO ---
+# --- APARTADO DE CONTACTO (CONECTADO A FORMSPREE) ---
 st.header("📩 Contáctanos o Agenda una Cita")
 st.write("Déjanos tus datos y nos pondremos en contacto contigo lo antes posible para resolver tus dudas.")
 
-# Reemplaza 'TU_CODIGO_AQUI' con el código que te asignó Formspree (ejemplo: 'f/xbjnwxyz')
 formspree_url = "https://formspree.io/f/mkjnkprw"
 
 st.markdown(f"""
@@ -242,3 +262,6 @@ st.markdown(f"""
     <button type="submit" style="background: linear-gradient(90deg, #ff7e00, #ec4899); color: white; padding: 10px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">Enviar Mensaje</button>
 </form>
 """, unsafe_allow_html=True)
+
+st.markdown("---")
+st.markdown("<p style='text-align: center; color: #64748b;'>© 2026 NETRO DETAIL. Todos los derechos reservados.</p>", unsafe_allow_html=True)
