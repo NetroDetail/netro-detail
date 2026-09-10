@@ -6,24 +6,24 @@ st.set_page_config(
     layout="wide"
 )
 
-# Estilos con un banner superior texturizado acorde al fondo del logo y diseño limpio abajo
+# Estilos para convertir la parte superior en un banner horizontal completo
 st.markdown("""
     <style>
     .stApp {
         background-color: #f8fafc;
     }
-    /* Banner superior estilo muro/concreto como el fondo del logo */
-    .banner-logo-container {
+    /* Banner horizontal de lado a lado con la textura estilo muro/concreto */
+    .banner-horizontal {
         background-color: #e5e7eb;
-        background-image: radial-gradient(#9ca3af 0.75px, transparent 0.75px), radial-gradient(#9ca3af 0.75px, #e5e7eb 0.75px);
+        background-image: radial-gradient(#9ca3af 0.8px, transparent 0.8px), radial-gradient(#9ca3af 0.8px, #e5e7eb 0.8px);
         background-size: 30px 30px;
         background-position: 0 0, 15px 15px;
-        padding: 40px 20px;
-        border-radius: 16px;
-        text-align: center;
+        padding: 30px 20px;
+        width: 100%;
+        border-top: 3px solid #cbd5e1;
+        border-bottom: 3px solid #cbd5e1;
         margin-bottom: 30px;
-        border: 2px dashed #cbd5e1;
-        box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
+        box-shadow: inset 0 3px 8px rgba(0,0,0,0.06);
     }
     .subtitulo {
         font-size: 1.3rem;
@@ -82,8 +82,8 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- BANNER SUPERIOR CON EL ESTILO DEL LOGO ---
-st.markdown('<div class="banner-logo-container">', unsafe_allow_html=True)
+# --- BANNER HORIZONTAL SUPERIOR ---
+st.markdown('<div class="banner-horizontal">', unsafe_allow_html=True)
 
 col_logo1, col_logo2, col_logo3 = st.columns([2, 1, 2])
 with col_logo2:
@@ -93,6 +93,7 @@ with col_logo2:
         st.warning("⚠️ No se encontró la imagen del logo.")
 
 st.markdown('<p class="subtitulo">⚡ Pasión por la estética y protección máxima para tu vehículo ⚡</p>', unsafe_allow_html=True)
+
 st.markdown('</div>', unsafe_allow_html=True)
 
 # --- SECCIÓN 1: VIDEOS INFORMATIVOS DE LA MARCA ---
@@ -122,14 +123,14 @@ st.write("Mira los acabados de alto nivel que logramos en los vehículos de nues
 
 col_v3, col_v4 = st.columns(2)
 with col_v3:
-    st.markdown("### Resultado: Aplicación de Ceramico")
+    st.markdown("### Resultado: Auto Detallado 1")
     try:
         st.video("video3.mp4")
     except:
         st.info("💡 Sube tu video3.mp4 en GitHub para mostrarlo aquí.")
 
 with col_v4:
-    st.markdown("### Resultado: Pulido y Encerado")
+    st.markdown("### Resultado: Auto Detallado 2")
     try:
         st.video("video4.mp4")
     except:
@@ -257,7 +258,7 @@ st.markdown(f"""
     </div>
     <div style="margin-bottom: 15px;">
         <label style="color: #1e293b; font-weight: bold;">Número de teléfono</label><br>
-        <input type="text" name="telefono" required style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #cbd5e1;">
+        <input type="text" name="telefono" required style="width: 100% style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #cbd5e1;">
     </div>
     <div style="margin-bottom: 15px;">
         <label style="color: #1e293b; font-weight: bold;">Correo electrónico</label><br>
