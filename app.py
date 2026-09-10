@@ -105,14 +105,14 @@ st.write("Mira los acabados de alto nivel que logramos en los vehículos de nues
 
 col_v3, col_v4 = st.columns(2)
 with col_v3:
-    st.markdown("### Resultado: Auto Detallado 1")
+    st.markdown("### Resultado: Aplicación de Cerámico")
     try:
         st.video("video3.mp4")
     except:
         st.info("💡 Sube tu video3.mp4 en GitHub para mostrarlo aquí.")
 
 with col_v4:
-    st.markdown("### Resultado: Auto Detallado 2")
+    st.markdown("### Resultado: Pulido y encerado")
     try:
         st.video("video4.mp4")
     except:
