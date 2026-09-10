@@ -6,18 +6,32 @@ st.set_page_config(
     layout="wide"
 )
 
-# Estilos limpios y profesionales
+# Estilos con un banner superior texturizado acorde al fondo del logo y diseño limpio abajo
 st.markdown("""
     <style>
     .stApp {
         background-color: #f8fafc;
+    }
+    /* Banner superior estilo muro/concreto como el fondo del logo */
+    .banner-logo-container {
+        background-color: #e5e7eb;
+        background-image: radial-gradient(#9ca3af 0.75px, transparent 0.75px), radial-gradient(#9ca3af 0.75px, #e5e7eb 0.75px);
+        background-size: 30px 30px;
+        background-position: 0 0, 15px 15px;
+        padding: 40px 20px;
+        border-radius: 16px;
+        text-align: center;
+        margin-bottom: 30px;
+        border: 2px dashed #cbd5e1;
+        box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
     }
     .subtitulo {
         font-size: 1.3rem;
         color: #0284c7;
         text-align: center;
         font-weight: 700;
-        margin-bottom: 25px;
+        margin-top: 15px;
+        margin-bottom: 0px;
     }
     .contacto-banner {
         background: linear-gradient(90deg, #ff7e00, #ec4899, #06b6d4);
@@ -68,7 +82,9 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- ENCABEZADO Y LOGO COMPACTO CENTRADO ---
+# --- BANNER SUPERIOR CON EL ESTILO DEL LOGO ---
+st.markdown('<div class="banner-logo-container">', unsafe_allow_html=True)
+
 col_logo1, col_logo2, col_logo3 = st.columns([2, 1, 2])
 with col_logo2:
     try:
@@ -77,6 +93,7 @@ with col_logo2:
         st.warning("⚠️ No se encontró la imagen del logo.")
 
 st.markdown('<p class="subtitulo">⚡ Pasión por la estética y protección máxima para tu vehículo ⚡</p>', unsafe_allow_html=True)
+st.markdown('</div>', unsafe_allow_html=True)
 
 # --- SECCIÓN 1: VIDEOS INFORMATIVOS DE LA MARCA ---
 st.header("🎥 Conoce Netro Detail")
@@ -105,14 +122,14 @@ st.write("Mira los acabados de alto nivel que logramos en los vehículos de nues
 
 col_v3, col_v4 = st.columns(2)
 with col_v3:
-    st.markdown("### Resultado: Aplicación de Cerámico")
+    st.markdown("### Resultado: Aplicación de Ceramico")
     try:
         st.video("video3.mp4")
     except:
         st.info("💡 Sube tu video3.mp4 en GitHub para mostrarlo aquí.")
 
 with col_v4:
-    st.markdown("### Resultado: Pulido y encerado")
+    st.markdown("### Resultado: Pulido y Encerado")
     try:
         st.video("video4.mp4")
     except:
