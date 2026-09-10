@@ -76,7 +76,7 @@ with col_logo2:
     except:
         st.warning("⚠️ No se encontró la imagen del logo.")
 
-st.markdown('<p class="subtitulo">⚡ Pasión urbana, estética y protección máxima para tu vehículo ⚡</p>', unsafe_allow_html=True)
+st.markdown('<p class="subtitulo">⚡ Pasión por la estética y protección máxima para tu vehículo ⚡</p>', unsafe_allow_html=True)
 
 # --- SECCIÓN DE VIDEOS EN CUADRÍCULA (LADO A LADO) ---
 st.header("🎥 Conoce Netro Detail y Resultados")
