@@ -97,11 +97,15 @@ with col_v2:
 
 st.markdown("<br>", unsafe_allow_html=True)
 
-# --- NÚMERO DE TELÉFONO DE CONTACTO DESTACADO ---
-st.markdown("""
-    <div class="contacto-banner">
-        📞 ¡Reserva tu cita o cotiza hoy llamando al: <span style="color: #fef08a; text-shadow: 0 0 5px #000;">+52 (442 121 9758)</span>!
-    </div>
+# --- NÚMERO DE TELÉFONO DE CONTACTO / WHATSAPP ---
+whatsapp_url = "https://wa.me/524421219758?text=Hola,%20me%20interesa%20cotizar%20un%20servicio%20de%20detallado%20para%20mi%20auto."
+
+st.markdown(f"""
+    <a href="{whatsapp_url}" target="_blank" style="text-decoration: none;">
+        <div class="contacto-banner" style="cursor: pointer;">
+            💬 ¡Reserva tu cita o cotiza hoy por WhatsApp: <span style="color: #fef08a; text-shadow: 0 0 5px #000;">+52 (442) 121-9758</span>! 📲
+        </div>
+    </a>
 """, unsafe_allow_html=True)
 
 st.markdown("---")
