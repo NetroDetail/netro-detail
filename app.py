@@ -6,35 +6,19 @@ st.set_page_config(
     layout="wide"
 )
 
-# Estilos profesionales con el banner horizontal texturizado de lado a lado
+# Estilos limpios y profesionales
 st.markdown("""
     <style>
     .stApp {
         background-color: #f8fafc;
     }
-    /* Franja banner horizontal de lado a lado con la textura de fondo del logo */
-    .banner-completo {
-        background-color: #e2e8f0;
-        background-image: radial-gradient(#cbd5e1 1.2px, transparent 1.2px), radial-gradient(#cbd5e1 1.2px, #e2e8f0 1.2px);
-        background-size: 24px 24px;
-        background-position: 0 0, 12px 12px;
-        width: 100vw;
-        position: relative;
-        left: calc(-50vw + 50%);
-        padding: 35px 0;
+    /* Estilo para que el banner se adapte perfectamente de lado a lado */
+    .banner-imagen {
+        width: 100%;
+        border-radius: 0px 0px 16px 16px;
         margin-top: -20px;
         margin-bottom: 30px;
-        border-top: 3px solid #cbd5e1;
-        border-bottom: 3px solid #cbd5e1;
-        box-shadow: inset 0 4px 10px rgba(0,0,0,0.04);
-    }
-    .subtitulo {
-        font-size: 1.3rem;
-        color: #0284c7;
-        text-align: center;
-        font-weight: 700;
-        margin-top: 15px;
-        margin-bottom: 0px;
+        box-shadow: 0 6px 20px rgba(0,0,0,0.15);
     }
     .contacto-banner {
         background: linear-gradient(90deg, #ff7e00, #ec4899, #06b6d4);
@@ -85,19 +69,11 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-# --- BANNER HORIZONTAL CONTINUO CON LA TEXTURA DEL LOGO ---
-st.markdown('<div class="banner-completo">', unsafe_allow_html=True)
-
-col_logo1, col_logo2, col_logo3 = st.columns([2, 1, 2])
-with col_logo2:
-    try:
-        st.image("2E4B2249-9AC2-448E-90D5-A77A10E5FF49.jpg", use_container_width=True)
-    except:
-        st.warning("⚠️ No se encontró la imagen del logo.")
-
-st.markdown('<p class="subtitulo">⚡ Pasión por la estética y protección máxima para tu vehículo ⚡</p>', unsafe_allow_html=True)
-
-st.markdown('</div>', unsafe_allow_html=True)
+# --- NUEVO BANNER PRINCIPAL DE ANCHO COMPLETO ---
+try:
+    st.image("banner.jpg", use_container_width=True)
+except:
+    st.warning("⚠️ No se encontró la imagen 'banner.jpg'. Súbela a tu repositorio de GitHub.")
 
 # --- SECCIÓN 1: VIDEOS INFORMATIVOS DE LA MARCA ---
 st.header("🎥 Conoce Netro Detail")
@@ -126,14 +102,14 @@ st.write("Mira los acabados de alto nivel que logramos en los vehículos de nues
 
 col_v3, col_v4 = st.columns(2)
 with col_v3:
-    st.markdown("### Resultado: Aplicación de Cerámico")
+    st.markdown("### Resultado: Auto Detallado 1")
     try:
         st.video("video3.mp4")
     except:
         st.info("💡 Sube tu video3.mp4 en GitHub para mostrarlo aquí.")
 
 with col_v4:
-    st.markdown("### Resultado: Pulido y Encerado")
+    st.markdown("### Resultado: Auto Detallado 2")
     try:
         st.video("video4.mp4")
     except:
@@ -279,7 +255,7 @@ st.markdown(f"""
         </select>
     </div>
     <div style="margin-bottom: 15px;">
-        <label style="color: #1e293b; font-weight: bold;">Dudas o comentarios</label><br>
+        <label style="color:name style="color: #1e293b; font-weight: bold;">Dudas o comentarios</label><br>
         <textarea name="dudas" rows="4" style="width: 100%; padding: 8px; border-radius: 6px; border: 1px solid #cbd5e1;"></textarea>
     </div>
     <button type="submit" style="background: linear-gradient(90deg, #ff7e00, #ec4899); color: white; padding: 10px 20px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer;">Enviar Mensaje</button>
